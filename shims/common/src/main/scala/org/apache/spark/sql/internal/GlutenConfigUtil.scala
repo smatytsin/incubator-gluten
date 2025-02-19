@@ -17,6 +17,7 @@
 package org.apache.spark.sql.internal
 
 import org.apache.spark.internal.config.ConfigReader
+import org.apache.spark.network.util.{ByteUnit, JavaUtils}
 
 import scala.collection.JavaConverters._
 
@@ -43,5 +44,10 @@ object GlutenConfigUtil {
           (k, v)
         }
     }.toMap
+  }
+
+  def mapByteConfValue(conf: Map[String, String], key: String, unit: ByteUnit)(
+    f: Long => Unit): Unit = {
+    conf.get(key).foreach(v => f(JavaUtils.byteStringAs(v, unit)))
   }
 }
