@@ -107,12 +107,7 @@ class ColumnarShuffleManager(conf: SparkConf) extends ShuffleManager with Loggin
           metrics,
           shuffleExecutorComponents)
       case other: BaseShuffleHandle[K @unchecked, V @unchecked, _] =>
-        GlutenShuffleUtils.getSortShuffleWriter(
-          other,
-          mapId,
-          context,
-          metrics,
-          shuffleExecutorComponents)
+        new SortShuffleWriter(other, mapId, context, shuffleExecutorComponents)
     }
   }
 
