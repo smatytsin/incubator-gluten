@@ -94,7 +94,11 @@ index 3f01df2fd..bd3ea501d 100644
      URL_HASH ${VELOX_ARROW_BUILD_SHA256_CHECKSUM}
      SOURCE_SUBDIR cpp
      CMAKE_ARGS ${ARROW_CMAKE_ARGS}
- 
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index bb7c49907..3372d48b4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -378,7 +383,7 @@ resolve_dependency(Boost 1.77.0 COMPONENTS ${BOOST_INCLUDE_LIBRARIES})
  # for reference. find_package(range-v3)
  
