@@ -39,6 +39,7 @@ import org.apache.spark.sql.execution.metric.SQLMetric
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.utils.OASPackageBridge.InputMetricsWrapper
 import org.apache.spark.sql.vectorized.ColumnarBatch
+import org.apache.spark.util.ExecutorManager
 import org.apache.spark.util.{ExecutorManager, SerializableConfiguration, SparkDirectoryUtil}
 
 import org.apache.hadoop.fs.{FileSystem, Path}
