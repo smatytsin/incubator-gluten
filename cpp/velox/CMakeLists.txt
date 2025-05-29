@@ -584,8 +584,6 @@ endif()
 
 if(ENABLE_HDFS)
   add_definitions(-DENABLE_HDFS)
-  find_libhdfs3()
-  target_link_libraries(velox PUBLIC HDFS::hdfs3)
 endif()
 
 if(ENABLE_S3)
