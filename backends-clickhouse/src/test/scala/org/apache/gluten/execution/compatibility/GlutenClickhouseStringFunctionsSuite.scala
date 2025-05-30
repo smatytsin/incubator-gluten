@@ -161,8 +161,7 @@ class GlutenClickhouseStringFunctionsSuite extends GlutenClickHouseWholeStageTra
     }
   }
 
-  testSparkVersionLE33("base64") {
-    // fallback on Spark-352, see https://github.com/apache/spark/pull/47303
+  test("base64") {
     val tableName = "base64_table"
     withTable(tableName) {
       sql(s"create table $tableName(data String) using parquet")
