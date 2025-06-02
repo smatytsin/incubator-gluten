@@ -26,6 +26,7 @@ import org.apache.gluten.init.NativeBackendInitializer
 import org.apache.gluten.jni.{JniLibLoader, JniWorkspace}
 import org.apache.gluten.udf.UdfJniWrapper
 import org.apache.gluten.utils._
+
 import org.apache.spark.{HdfsConfGenerator, ShuffleDependency, SparkConf, SparkContext}
 import org.apache.spark.api.plugin.PluginContext
 import org.apache.spark.internal.Logging
@@ -38,6 +39,7 @@ import org.apache.spark.sql.execution.datasources.velox.{VeloxParquetWriterInjec
 import org.apache.spark.sql.expression.UDFResolver
 import org.apache.spark.sql.internal.{GlutenConfigUtil, StaticSQLConf}
 import org.apache.spark.util.{SparkDirectoryUtil, SparkResourceUtil}
+
 import org.apache.commons.lang3.StringUtils
 
 import java.util.concurrent.atomic.AtomicBoolean
@@ -170,7 +172,8 @@ class VeloxListenerApi extends ListenerApi with Logging {
       loader.load(s"$platformLibDir/${System.mapLibraryName(VeloxBackend.BACKEND_NAME)}", false)
     }
 
-    NativeBackendInitializer.forBackend(VeloxBackend.BACKEND_NAME)
+    NativeBackendInitializer
+      .forBackend(VeloxBackend.BACKEND_NAME)
       .initialize(parseConf(conf, isDriver))
 
     // Inject backend-specific implementations to override spark classes.
