@@ -19,12 +19,14 @@ package org.apache.gluten.config
 import org.apache.spark.internal.Logging
 import org.apache.spark.network.util.{ByteUnit, JavaUtils}
 import org.apache.spark.sql.internal.{GlutenConfigUtil, SQLConf}
+
 import com.google.common.collect.ImmutableList
 import org.apache.hadoop.security.UserGroupInformation
 
 import java.util
 import java.util.Locale
 import java.util.concurrent.TimeUnit
+
 import scala.collection.JavaConverters._
 
 case class GlutenNumaBindingInfo(
