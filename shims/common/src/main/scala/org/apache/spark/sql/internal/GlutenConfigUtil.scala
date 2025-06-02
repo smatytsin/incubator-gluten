@@ -47,7 +47,7 @@ object GlutenConfigUtil {
   }
 
   def mapByteConfValue(conf: Map[String, String], key: String, unit: ByteUnit)(
-    f: Long => Unit): Unit = {
+      f: Long => Unit): Unit = {
     conf.get(key).foreach(v => f(JavaUtils.byteStringAs(v, unit)))
   }
 }
