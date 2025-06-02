@@ -170,7 +170,8 @@ class VeloxListenerApi extends ListenerApi with Logging {
       loader.load(s"$platformLibDir/${System.mapLibraryName(VeloxBackend.BACKEND_NAME)}", false)
     }
 
-    NativeBackendInitializer.forBackend(VeloxBackend.BACKEND_NAME).initialize(parseConf(conf, isDriver))
+    NativeBackendInitializer.forBackend(VeloxBackend.BACKEND_NAME)
+      .initialize(parseConf(conf, isDriver))
 
     // Inject backend-specific implementations to override spark classes.
     GlutenFormatFactory.register(new VeloxParquetWriterInjects)
