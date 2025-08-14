@@ -31,7 +31,7 @@ After the set-up, you can now build Gluten with QAT. Below command is used to en
 ```bash
 cd /path/to/gluten
 
-## The script builds four jars for spark 3.2.2, 3.3.1, 3.4.3 and 3.5.1.
+## The script builds four jars for spark 3.2.2, 3.3.1, 3.4.3 and 3.5.7.
 ./dev/buildbundle-veloxbe.sh --enable_iaa=ON
 ```
 

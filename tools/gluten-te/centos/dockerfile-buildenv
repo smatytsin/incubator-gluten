@@ -67,6 +67,6 @@ RUN if [ "$BUILD_SPARK_BINARIES" = "ON" ]; then mkdir spark331 && tar -xvf spark
 RUN if [ "$BUILD_SPARK_BINARIES" = "ON" ]; then https://archive.apache.org/dist/spark/spark-3.4.3/spark-3.4.3-bin-hadoop3.tgz; fi
 RUN if [ "$BUILD_SPARK_BINARIES" = "ON" ]; then mkdir spark343 && tar -xvf spark-3.4.3-bin-hadoop3.tgz -C spark343 --strip-components=1; fi
 
-# Build & install Spark 3.5.1
-RUN if [ "$BUILD_SPARK_BINARIES" = "ON" ]; then https://archive.apache.org/dist/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz; fi
-RUN if [ "$BUILD_SPARK_BINARIES" = "ON" ]; then mkdir spark351 && tar -xvf spark-3.5.1-bin-hadoop3.tgz -C spark351 --strip-components=1; fi
+# Build & install Spark 3.5.7
+RUN if [ "$BUILD_SPARK_BINARIES" = "ON" ]; then https://archive.apache.org/dist/spark/spark-3.5.7/spark-3.5.7-bin-hadoop3.tgz; fi
+RUN if [ "$BUILD_SPARK_BINARIES" = "ON" ]; then mkdir spark357 && tar -xvf spark-3.5.7-bin-hadoop3.tgz -C spark357 --strip-components=1; fi
